@@ -1,3 +1,4 @@
+"""Useful functions for TSP"""
 import pandas as pd
 import os
 from scipy.spatial.distance import cdist
@@ -5,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def load(filename : str, sep : str, header = None) -> pd.DataFrame:
-    '''Read the file and returns a dataframe of cities'''
+    """Read the file and returns a dataframe of cities"""
 
     datapath = './data'
     docpath = os.path.join(datapath, filename)
@@ -18,7 +19,7 @@ def load(filename : str, sep : str, header = None) -> pd.DataFrame:
     return df
 
 def create(numCities : int, sideLength : int):
-    '''Create synthetic data for cities '''
+    """Create synthetic data for cities """
 
     rows_names = ['City_' + str(i) for i in range(numCities)]
 
@@ -28,15 +29,15 @@ def create(numCities : int, sideLength : int):
 
 
 def computeEDM(df : pd.DataFrame) -> np.ndarray:
-    '''Compute the euclidean distances between cities in dataframe
-    The distance bewtween City_1 and City_j is in EDM[i,j]'''
+    """Compute the euclidean distances between cities in dataframe
+    The distance bewtween City_1 and City_j is in EDM[i,j]"""
 
     EDM = cdist(df.values, df.values) 
 
     return EDM
 
 def showCities(cities : pd.DataFrame):
-    '''Plot the cities'''
+    """Plot the cities"""
 
     fig, ax = plt.subplots()
 
@@ -46,8 +47,8 @@ def showCities(cities : pd.DataFrame):
     plt.ylabel('Y coordinate')
     plt.show()
 
-def showPath(fittest : list):
-    '''Plot the fittest path'''
+def showPath(fittest : list, filename : str = None):
+    """Plot the fittest path"""
 
     # Set dataframe in order
     d = {'x': [city.x for city in fittest], 'y' : [city.y for city in fittest]}
@@ -64,5 +65,6 @@ def showPath(fittest : list):
     plt.xlabel('X coordinate')
     plt.ylabel('Y coordinate')
 
-    plt.savefig('solution.png', dpi=300)
+    if filename is not None:
+        plt.savefig(os.path.join('figures', filename), dpi=300)
     plt.show()

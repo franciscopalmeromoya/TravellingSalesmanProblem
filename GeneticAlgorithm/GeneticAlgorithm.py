@@ -1,11 +1,33 @@
-import random
+"""Implementation of a Genetic Algortihm class and its functions for the TSP.
+The modular implementation of the code allows it use in other applications.
+
+Author:
+    Francisco J. Palmero Moya @ UNED 
+    12/08/2023
+"""
+
+import os
 import copy
+import random
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 def initializePopulation(chromosome : list, popSize : int) -> list:
-    '''Initialize population as a dict from a list'''
+    """Random initialisation of population.
+    
+    Parameters
+    ----------
+    chromosome : list
+        Given individual genotype.
+    popSize : int
+        Desired number of individuals.
+
+    Outputs
+    -------
+    population : list
+        A multiset of genotypes.
+    """
 
     population = []
 
@@ -19,7 +41,20 @@ def initializePopulation(chromosome : list, popSize : int) -> list:
     return population
 
 def computeFitness(population : list, EDM : np.ndarray) -> list: # Funtion only for TSP
-    '''Compute the fitness of each individual'''
+    """Compute the fitness of each individual.
+    
+    Parameters
+    ----------
+    popolutaion : list
+        A multiset of genotypes.
+    EDM : array
+        Euclidean Distance Matrix between cities.
+
+    Outputs
+    -------
+    fitness : list
+        Fitness of each individual as a list.
+    """
 
     fitness = []
 
@@ -48,12 +83,31 @@ def computeFitness(population : list, EDM : np.ndarray) -> list: # Funtion only 
     return fitness
 
 def selectParents(population : list, fitness : list, k : int = 2) -> list:
-    '''Tournament selection of tournament size k'''
+    """Tournament selection of tournament size k. The number of parents selected
+    is equal to the population size.
+    
+    Parameters
+    ----------
+    population : list
+        A multiset of genotypes.
+    fitness : list
+        Fitness of each individual as a list.
+    k : int
+        Tournament size.
+    
+    Outputs
+    -------
+    mating_pool : list
+        Parents of the next generation.
+    """
 
     mating_pool = []
 
+    # Select popSize parents
     for _ in range(len(population)):
 
+        # Pick k individuals randomly with replacement.
+        # The comparison starts setting one candidate as best individual.
         ind = random.randint(0, len(population)-1)
         bestFitness = fitness[ind]
         choice = copy.deepcopy(population[ind])
@@ -62,16 +116,31 @@ def selectParents(population : list, fitness : list, k : int = 2) -> list:
 
             ind = random.randint(0, len(population)-1)
             
+            # If the individial is better, update the candidate 
             if fitness[ind] < bestFitness:
                 bestFitness = fitness[ind]
                 choice = copy.deepcopy(population[ind])
-                
+            
+            # Include the best individual of the tournament.
             mating_pool.append(choice)
 
     return mating_pool
 
-def pmx(parent1, parent2) -> list:
-    '''Partially Mapped Crossover'''
+def pmx(parent1 : list, parent2 : list) -> list:
+    """Crossover as Partially Mapped Crossover.
+    
+    Parameters
+    ----------
+    parent1 : list
+        Individual genotype 1 as permutation representation.
+    parent2 : list
+        Individual genotype 1 as permutation representation.
+    
+    Outputs
+    -------
+    offspring : list
+        Offspring genotype after crossover.
+    """
 
     # Choose two random cutting points
     cutting_point1 = random.randint(0, len(parent1) - 1)
@@ -107,13 +176,27 @@ def pmx(parent1, parent2) -> list:
     return offspring
 
 def recombination(mating_pool : list, crossoverRate : float) -> list:
-    '''Parents are selected randomly and the recombination is done according to a crossover rate'''
+    """Parents are selected randomly and the recombination is done according to a crossover rate.
+    
+    Parameters
+    ----------
+    mating_pool : list
+        Selected parents from the population.
+    crossoverRate : float
+        Probability of crossover
+    
+    Outputs
+    -------
+    offspring : list
+        Offspring genotype after recombination.
+    """
 
     offspring = []
 
+    # Create offspring after recombination
     for _ in range(len(mating_pool)):
 
-        # Choose parents randomly
+        # Choose parents randomly with replacement.
         parent1 = copy.deepcopy(mating_pool[random.randint(0, len(mating_pool)-1)])
         parent2 = copy.deepcopy(mating_pool[random.randint(0, len(mating_pool)-1)])
 
@@ -128,22 +211,48 @@ def recombination(mating_pool : list, crossoverRate : float) -> list:
     return offspring
 
 def swap(chromosome : list) -> list:
-    '''Swap mutation'''
+    """Swap mutation,
+    
+    Parameters
+    ----------
+    chromosome : list
+        Individual genotype.
+    
+    Outputs
+    -------
+    chromosome : list
+        Individual genotype after swap mutation
+    """
 
+    # Select two genes at random in the chromosome
     i = random.randint(0, len(chromosome)-1)
     j = random.randint(0, len(chromosome)-1)
 
+    # Swap allele values
     chromosome[i], chromosome[j] = chromosome[j], chromosome[i]
 
     return chromosome
 
 
 def mutate(population : list, mutationRate : float) -> list:
-    '''Mutation given a mutation rate'''
+    """Mutation given a mutation rate
+    
+    Parameters
+    ----------
+    population : list
+        A multiset of genotypes.
+    mutationRate : float
+        Probability of crossover
+    
+    Outputs
+    -------
+    offspring : list
+        Population after mutation
+    """
 
     offspring = []
      
-
+    # Mutate population with probability = mutationRate
     for individual in population:
         if random.random() < mutationRate:
             individual = swap(individual)
@@ -152,8 +261,23 @@ def mutate(population : list, mutationRate : float) -> list:
 
     return offspring
 
-def selectFittest(population, EDM : np.ndarray):
-    '''Select the fittest menber of a population and returns it fitness'''
+def selectFittest(population : list, EDM : np.ndarray):
+    """Select the fittest menber of a population and returns it fitness.
+    
+    Parameters
+    ----------
+    population : list
+        A multiset of genotypes.
+    EDM : array
+        Euclidean Distance Matrix between cities.
+    
+    Outputs
+    -------
+    fittest : list
+        The fittest individual in the population.
+    bestFitness : list
+        The fitness of the fittest individual in the population.
+    """
 
     fitness = computeFitness(population, EDM)
     bestFitness = np.array(fitness).min()
@@ -162,11 +286,32 @@ def selectFittest(population, EDM : np.ndarray):
     return fittest, bestFitness
 
 def survivorSelection(offspring : list, population : list, EDM : np.ndarray) -> list:
+    """Survivor selection mechanism as a generational model. Elitism is applied.
+    
+    Parameters
+    ----------
+    offspring : list
+        Candidate individuals for the new generation.
+    population : list
+        Old generation individuals.
+    EDM : array
+        Euclidean Distance Matrix between cities.
 
+    Outputs
+    -------
+    population : list
+        Updated population after survivor selection.
+    """
+
+    # Select fittest individual of population
     popFittest, popBest = selectFittest(population, EDM)
+
+    # Evaluate offspring fitness
     _, offBest = selectFittest(offspring, EDM)
 
+    # Apply elitism
     if popBest < offBest:
+        # Select individial for replacement at random
         index = random.randint(0, len(offspring)-1)
         offspring[index] = popFittest
     
@@ -176,24 +321,43 @@ def survivorSelection(offspring : list, population : list, EDM : np.ndarray) -> 
 
 class GeneticAlgorithm:
     def __init__(self, chromosome: list, popSize : int, crossoverRate : float, mutationRate : float, num_iter : int, show = False):
+        """Genetic Algortihm.
+        
+        Parameters
+        ----------
+        chromosome : list
+            Given individual genotype.
+        popSize : int
+            Desired number of individuals.
+        crossoverRate : float
+            Probability of crossover.
+        mutationRate : float
+            Probability of mutation.
+        num_iter : int
+            Maximun number of iterations.
+        show : bool
+            Show results after running.
+        """
         self.chromosome = chromosome
         self.popSize = popSize
         self.crossoverRate = crossoverRate
         self.mutationRate = mutationRate
         self.num_iter = num_iter
+        self.show = show
+
+        # Set optimal value (if it is known a priori) and error margin
         self.optimal_value = None 
         self.epsilon = None
-        self.show = show
 
         # Performance Measures
         self.mean_best_fitness = None
 
-    def showResults(self, x : list, y : list):
-        '''Plot results'''
+    def showResults(self, x : list, y : list, filename : str = None):
+        """Plot progress history."""
 
         plt.plot(x, y, label = 'Best fitness')
         plt.rc('text', usetex=True)
-        plt.title(r'Progress for $\mu$: %s, $p_c$: %s, and $p_m$: %s'%(str(self.popSize), str(self.crossoverRate), str(self.mutationRate)))
+        plt.title(r'Progress history for $\mu$: %s, $p_c$: %s, and $p_m$: %s'%(str(self.popSize), str(self.crossoverRate), str(self.mutationRate)))
         plt.xlabel('Iteration')
         plt.ylabel('Fitness')
 
@@ -205,15 +369,16 @@ class GeneticAlgorithm:
         
         plt.legend()
 
-        plt.savefig('progress.png', dpi=300)
+        if filename is not None:
+            plt.savefig(os.path.join('figures', filename), dpi=300)
         plt.show()
 
     def showStats(self):
-        '''Show different Performance Measures'''
+        """Show different Performance Measures"""
         print('The mean best fitness (MBF) is: %s'%(self.mean_best_fitness))
 
     def run(self, EDM):
-        '''Run the Genetic Algorithm'''
+        """Run the Genetic Algorithm"""
 
         # Variables to plot
         y = [] # Best fitness
