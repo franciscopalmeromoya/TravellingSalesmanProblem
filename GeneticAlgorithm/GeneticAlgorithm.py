@@ -319,6 +319,7 @@ def survivorSelection(offspring : list, population : list, EDM : np.ndarray) -> 
 
     return population
 
+# The current implementation is specifically designed for TSP. Just change specific functions for ther kind of implementations.
 class GeneticAlgorithm:
     def __init__(self, chromosome: list, popSize : int, crossoverRate : float, mutationRate : float, num_iter : int, show = False):
         """Genetic Algortihm.
