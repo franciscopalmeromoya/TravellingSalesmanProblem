@@ -12,6 +12,8 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
+random.seed(10)
+
 
 def initializePopulation(chromosome : list, popSize : int) -> list:
     """Random initialisation of population.
@@ -149,8 +151,8 @@ def pmx(parent1 : list, parent2 : list) -> list:
     # Make sure cutting_point1 is smaller than cutting_point2
     if cutting_point1 > cutting_point2:
         cutting_point1, cutting_point2 = cutting_point2, cutting_point1
-    
-    
+
+
     # The segment that will be exchanged between parents
     segment = parent1[cutting_point1:cutting_point2+1]
     
@@ -169,7 +171,7 @@ def pmx(parent1 : list, parent2 : list) -> list:
     for i in range(len(parent1)):
         if i >= cutting_point1 and i <= cutting_point2:
             continue
-        offspring[i] = parent2[i]
+        offspring[i] = parent1[i]
         while offspring[i] in segment:
             offspring[i] = mapping[offspring[i]]
     
@@ -257,7 +259,7 @@ def mutate(population : list, mutationRate : float) -> list:
         if random.random() < mutationRate:
             individual = swap(individual)
 
-    offspring.append(individual)
+        offspring.append(individual)
 
     return offspring
 
@@ -319,6 +321,20 @@ def survivorSelection(offspring : list, population : list, EDM : np.ndarray) -> 
 
     return population
 
+def countDistinct(population : list):
+    """Count the number of different solutions/individuals.
+    
+    Parameters
+    ----------
+    population : list
+        A multiset of genotypes.
+    """
+
+    # Convert population list to a set where elements are unique.
+    uniques = set(tuple(individual) for individual in population)
+
+    return len(uniques)
+
 # The current implementation is specifically designed for TSP. Just change specific functions for ther kind of implementations.
 class GeneticAlgorithm:
     def __init__(self, chromosome: list, popSize : int, crossoverRate : float, mutationRate : float, num_iter : int, show = False):
@@ -378,17 +394,21 @@ class GeneticAlgorithm:
         """Show different Performance Measures"""
         print('The mean best fitness (MBF) is: %s'%(self.mean_best_fitness))
 
-    def run(self, EDM):
+    def run(self, EDM, filename : str = None):
         """Run the Genetic Algorithm"""
 
         # Variables to plot
         y = [] # Best fitness
         x = [] # Current interation
+        self.diversity = [] # Diversity
 
         # Initialize the population
         population = initializePopulation(self.chromosome, self.popSize)
 
         for iter in range(self.num_iter):
+            # Diversity evaluation
+            d = countDistinct(population)
+
             # Population evaluation
             fitness = computeFitness(population, EDM)
             currentBest = np.array(fitness).min()
@@ -396,6 +416,7 @@ class GeneticAlgorithm:
             # Save progress to plot
             y.append(currentBest)
             x.append(iter)
+            self.diversity.append(d)
 
             # Termination condition
             if self.optimal_value is not None:
@@ -416,7 +437,7 @@ class GeneticAlgorithm:
         self.mean_best_fitness = np.array(y).mean()
 
         if self.show:
-            self.showResults(x, y)
+            self.showResults(x, y, filename = filename)
 
         
         return fittest, bestFitness

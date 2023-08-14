@@ -68,3 +68,31 @@ def showPath(fittest : list, filename : str = None):
     if filename is not None:
         plt.savefig(os.path.join('figures', filename), dpi=300)
     plt.show()
+
+def findClosestNeighborPath(EDM):
+    """Find an heuristic of the closest path."""
+
+    nPoints = EDM.shape[0]
+    visited = [False] * nPoints
+    path = [0]  # Start from point 0
+
+    currentPoint = 0
+    visited[currentPoint] = True
+
+    for _ in range(nPoints - 1):
+        closestDistance = float('inf')
+        closestNeighbor = None
+
+        for neighbor in range(nPoints):
+            if not visited[neighbor] and EDM[currentPoint, neighbor] < closestDistance:
+                closestDistance = EDM[currentPoint, neighbor]
+                closestNeighbor = neighbor
+        
+        path.append(closestNeighbor)
+        visited[closestNeighbor] = True
+        currentPoint = closestNeighbor
+
+    # Complete the cycle by returning to the starting point
+    path.append(0)
+
+    return path
