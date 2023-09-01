@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.12)  13 AUG 2023 10:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.12)  1 SEP 2023 21:44
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -781,6 +781,31 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip80
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen186
+\captionmargin=\dimen187
+\caption@leftmargin=\dimen188
+\caption@rightmargin=\dimen189
+\caption@width=\dimen190
+\caption@indent=\dimen191
+\caption@parindent=\dimen192
+\caption@hangindent=\dimen193
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count461
+\c@continuedfloat=\count462
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 239.
+\c@subfigure=\count463
+Package caption Info: New subtype `subtable' on input line 239.
+\c@subtable=\count464
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -806,45 +831,61 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./main.aux)
+ (./main.aux
+
+LaTeX Warning: Label `fig:progress16' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:progress16' multiply defined.
+
+
+LaTeX Warning: Label `fig:output16' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:output16' multiply defined.
+
+
+LaTeX Warning: Label `fig:problem16' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 18.
-LaTeX Font Info:    Trying to load font information for FML+futm on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 20.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 20.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 18.
-LaTeX Font Info:    Trying to load font information for FMS+futm on input line 18.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 20.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 20.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 18.
-LaTeX Font Info:    Trying to load font information for FMX+futm on input line 18.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 20.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 20.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -882,16 +923,16 @@ LaTeX Font Info:    ... okay on input line 18.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count461
-\scratchdimen=\dimen186
+\scratchcounter=\count465
+\scratchdimen=\dimen194
 \scratchbox=\box65
-\nofMPsegments=\count462
-\nofMParguments=\count463
+\nofMPsegments=\count466
+\nofMParguments=\count467
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count464
-\MPscratchDim=\dimen187
-\MPnumerator=\count465
-\makeMPintoPDFobject=\count466
+\MPscratchCnt=\count468
+\MPscratchDim=\dimen195
+\MPnumerator=\count469
+\makeMPintoPDFobject=\count470
 \everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -899,9 +940,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 18.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 18.
-\c@lstlisting=\count467
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 20.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 20.
+\c@lstlisting=\count471
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -915,39 +956,49 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 18.
-Package biblatex Info: Reference segment=0 on input line 18.
-Package hyperref Info: Link coloring OFF on input line 18.
+Package biblatex Info: Reference section=0 on input line 20.
+Package biblatex Info: Reference segment=0 on input line 20.
+Package hyperref Info: Link coloring OFF on input line 20.
  (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for FML+futmi on input line 20.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line 22.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 20.
+(Font)              scaled to size 11.03998pt on input line 22.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 20.
+(Font)              scaled to size 8.27998pt on input line 22.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 20.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+(Font)              scaled to size 6.43999pt on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 20.
+(Font)              scaled to size 11.03998pt on input line 22.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 20.
+(Font)              scaled to size 8.27998pt on input line 22.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 20.
-LaTeX Font Info:    Trying to load font information for TS1+futs on input line 40.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/fourier/ts1futs.fd
+(Font)              scaled to size 6.43999pt on input line 22.
+
+
+Package caption Warning: \label without proper reference on input line 65.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:EAscheme' on page 1 undefined on input line 40.
+
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 42.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
 
@@ -957,27 +1008,35 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 88.
+(Font)              scaled to size 9.19998pt on input line 90.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 88.
+(Font)              scaled to size 6.99199pt on input line 90.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 88.
+(Font)              scaled to size 5.51999pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 88.
+(Font)              scaled to size 9.19998pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 88.
+(Font)              scaled to size 6.99199pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 88.
+(Font)              scaled to size 5.51999pt on input line 90.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 88.
+(Font)              scaled to size 7.35999pt on input line 90.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 88.
+(Font)              scaled to size 6.25598pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 88.
+(Font)              scaled to size 7.35999pt on input line 90.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.25598pt on input line 88.
- [2] [3]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 135.
+(Font)              scaled to size 6.25598pt on input line 90.
+ [2]
+
+Package caption Warning: \label without proper reference on input line 119.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:tournament' on page 3 undefined on input line 103.
+
+[3]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 137.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
@@ -992,9 +1051,64 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 )
 \openout5 = `main.pyg'.
 
- (./_minted-main/8CA31376E26C97F12D16AAEA685BD0E7541C68F80C6A6F06151AFD63BAE50EBC.pygtex) [4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./main.aux)
+ (./_minted-main/8CA31376E26C97F12D16AAEA685BD0E7541C68F80C6A6F06151AFD63BAE50EBC.pygtex)
+<../figures/16citiesMBFvsbF.png, id=92, 542.025pt x 361.35pt>
+File: ../figures/16citiesMBFvsbF.png Graphic file (type png)
+<use ../figures/16citiesMBFvsbF.png>
+Package pdftex.def Info: ../figures/16citiesMBFvsbF.png  used on input line 155.
+(pdftex.def)             Requested size: 406.51775pt x 271.01184pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+<../figures/progress16.png, id=109, 412.6617pt x 328.8285pt>
+File: ../figures/progress16.png Graphic file (type png)
+<use ../figures/progress16.png>
+Package pdftex.def Info: ../figures/progress16.png  used on input line 166.
+(pdftex.def)             Requested size: 217.66211pt x 173.44536pt.
+<../figures/output16.png, id=110, 410.4936pt x 324.4923pt>
+File: ../figures/output16.png Graphic file (type png)
+<use ../figures/output16.png>
+Package pdftex.def Info: ../figures/output16.png  used on input line 173.
+(pdftex.def)             Requested size: 217.66211pt x 172.05931pt.
+ [5 <../figures/16citiesMBFvsbF.png> <../figures/progress16.png> <../figures/output16.png>]
+<../figures/16citiesquality.png, id=128, 462.528pt x 346.896pt>
+File: ../figures/16citiesquality.png Graphic file (type png)
+<use ../figures/16citiesquality.png>
+Package pdftex.def Info: ../figures/16citiesquality.png  used on input line 227.
+(pdftex.def)             Requested size: 346.89514pt x 260.17136pt.
+ [6 <../figures/16citiesquality.png>]
+<../figures/48citiesMBFvsbF.png, id=141, 542.025pt x 361.35pt>
+File: ../figures/48citiesMBFvsbF.png Graphic file (type png)
+<use ../figures/48citiesMBFvsbF.png>
+Package pdftex.def Info: ../figures/48citiesMBFvsbF.png  used on input line 239.
+(pdftex.def)             Requested size: 406.51775pt x 271.01184pt.
+<../figures/48citiesquality.png, id=142, 462.528pt x 346.896pt>
+File: ../figures/48citiesquality.png Graphic file (type png)
+<use ../figures/48citiesquality.png>
+Package pdftex.def Info: ../figures/48citiesquality.png  used on input line 246.
+(pdftex.def)             Requested size: 346.89514pt x 260.17136pt.
+ [7 <../figures/48citiesMBFvsbF.png> <../figures/48citiesquality.png>]
+<../figures/48output.png, id=151, 422.7795pt x 324.4923pt>
+File: ../figures/48output.png Graphic file (type png)
+<use ../figures/48output.png>
+Package pdftex.def Info: ../figures/48output.png  used on input line 263.
+(pdftex.def)             Requested size: 217.66211pt x 167.0634pt.
+<../figures/48path1.png, id=152, 462.528pt x 346.896pt>
+File: ../figures/48path1.png Graphic file (type png)
+<use ../figures/48path1.png>
+Package pdftex.def Info: ../figures/48path1.png  used on input line 270.
+(pdftex.def)             Requested size: 217.66211pt x 163.24757pt.
+ [8 <../figures/48output.png> <../figures/48path1.png>] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F6ED9F41AFAECB101507B3988D0BC723;565.
+(rerunfilecheck)             Checksum: BE7954930D36DB56284EA6AAF27E1591;663.
 runsystem(rm main.pyg)...executed.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1002,18 +1116,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24742 strings out of 476025
- 435260 string characters out of 5790017
+ 26239 strings out of 476025
+ 465058 string characters out of 5790017
  1878388 words of memory out of 5000000
- 44780 multiletter control sequences out of 15000+600000
+ 46242 multiletter control sequences out of 15000+600000
  616793 words of font info for 139 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,8n,76p,1268b,1765s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,10n,76p,1268b,1769s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (4 pages, 131381 bytes).
+Output written on main.pdf (8 pages, 632446 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 211 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

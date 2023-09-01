@@ -12,8 +12,6 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
-random.seed(10)
-
 
 def initializePopulation(chromosome : list, popSize : int) -> list:
     """Random initialisation of population.
@@ -335,7 +333,8 @@ def countDistinct(population : list):
 
     return len(uniques)
 
-# The current implementation is specifically designed for TSP. Just change specific functions for ther kind of implementations.
+# The current implementation is specifically designed for TSP. 
+# Just change specific functions for other kind of implementations.
 class GeneticAlgorithm:
     def __init__(self, chromosome: list, popSize : int, crossoverRate : float, mutationRate : float, num_iter : int, show = False):
         """Genetic Algortihm.

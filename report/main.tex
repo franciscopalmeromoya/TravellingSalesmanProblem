@@ -12,6 +12,8 @@
 \usepackage{minted}
 \usepackage{csquotes}
 \usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
 \addbibresource{ref.bib}
 \title{A Genetic Algorithm for the Traveling Salesman Problem}
 \author{Francisco J. Palmero Moya}
@@ -145,6 +147,133 @@ The two datasets used have a known optimal solution. They are of different compl
 
 The synthetic data is used to study other kind of metrics such as the mean best fitness, diversity, etc. Assesing the quality of an EA commonly implies experimental comparison between the given EA and other traditional algorithm. Thus, the results are compared to an heuristic path fould by linking each city to the closest one. This heuristic result can be interpreted as an anchor to compare possible solutions to the problem because it is deterministic. The SR in such context can be defined as the percentage of runs where the fitness is better than the fitness of the heuristic path.
 
+\subsection*{Real-world datasets}
+The simple problem with 16 cities have been evaluated twice: first time the crossover rate has been fixed to 0.9 and the mutation rate change between 0.5, 0.7, and 0.9; second time, mutation rate have been fixed to 0.9 (best results in first evaluation) and crossover rate change between 0.5, 0.7, and 0.9. There are 50 instances for each parameter configuration, resulting in 300 overall were the population have been kept constant at 10. The stopping criteria are a maximum number of iterations equals to 3000 or when the optimal value of 281 plus a margin of 10 is reached. The results are shown in Figure \ref{fig:mbfvsbf16}. The dashed line represents the angle bisector that divide the plane into two parts. Those points closest to the bisector and outside the success region (in green) have a MBF similar to its best fitness, meaning that the algorithm got stuck in a local minimum. Points inside the success region are spread along MBF axis. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.75]{../figures/16citiesMBFvsbF.png}
+    \caption{Mean Best Fitness (MBF) versus best fitness value for different parameters configuration.}
+    \label{fig:mbfvsbf16}
+\end{figure}
+
+A typical progress plot of this problem and its solution are shown in Figure \ref{fig:problem16}. The GA finds the optimal solution before the maximum number of iterations of 3000 is reached. The MBF was around 348, which can be easily checked by looking at the progress plot in Figure \ref{fig:progress16}. The flat progress that we can find in the plot between iterations could correspond to a local minimum. In fact, looking at Figure \ref{fig:mbfvsbf16} there are some best fitness values that appears multiple times for different values of MBF. In such cases, we can safely say that the algorithm reached a local minimum, where the different MBF could be explained by different population initializations.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/progress16.png}
+        \caption{Progress for maximum number of iterations set at 3000.}
+        \label{fig:progress16}
+    \end{subfigure}
+    \hfil
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/output16.png}
+        \caption{Algorithm output (optimal solution)}
+        \label{fig:output16}
+    \end{subfigure}
+    \caption{Simple problem with 16 cities reaching optimum solution}
+    \label{fig:problem16}
+\end{figure}
+
+Once we fix the mutation rate to 0.9, we can individually study the importance of crossover rate in our problem. If we analyze those data points that lie into the success region we have\footnote{The SR is the count showed in Table \ref{tab:results16} divided by the total number of execution which is 50 in our case.}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|ccc|}
+        \hline
+        $p_c$ & 0.5 & 0.7 & 0.9 \\
+        \hline
+        \hline
+        Count & 21 & 16 & 21 \\
+        \hline
+    \end{tabular}
+    \caption{Single problem results for $p_m$ fixed at 0.9}
+    \label{tab:results16}
+\end{table}
+\newpage
+The results in Table \ref{tab:results16} show better performance for crossover rates of 0.5 and 0.9. On the other hand, the number of iteration required to reach the optimal value is 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|ccc|}
+        \hline
+        $p_c$ & 0.5 & 0.7 & 0.9 \\
+        \hline
+        \hline
+        mean & 502.19 & 500.31 & 850.00 \\
+        \hline
+        std & 536.91 & 551.86 & 869.14 \\
+        \hline
+        min & 84 & 70 & 179 \\
+        \hline 
+        25 \% & 211.0 & 167.5 & 330.0 \\
+        \hline
+        50 \% & 287 & 253 & 435 \\
+        \hline
+        75 \% & 507.0 & 496.5 & 826 \\
+        \hline
+        max & 1923 & 1907 & 2855 \\
+        \hline
+    \end{tabular}
+    \caption{Single problem results for $p_m$ fixed at 0.9}
+    \label{tab:iters16}
+\end{table}
+
+Table \ref{tab:iters16} shows the highest efficiency for crossover rate of 0.7, i.e., the algorithm reached the solution with higher speed. Nevertheless, as we saw in Table \ref{tab:results16}, crossover rate equals to 0.7 implies lower success rate. The parameters' configuration will therefore depend on the goal and scope of our algorithm. If we would like to reach a good solution at least once, crossover rate set at 0.7 will reach the solution faster. If we would like to guarantee a better solution quality many times, crossover rates 0.5 and 0.9 increase this. In this case, we should use 0.5, since it is faster a have similar solution quality as shown in Figure \ref{fig:quality16}. Furthermore, it is worth noting that the difference between expected values of 0.5 and 0.7 could be neglected, making the final decision of parameters' configuration easier.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.75]{../figures/16citiesquality.png}
+    \caption{Solutions quality in terms of the best fitness values.}
+    \label{fig:quality16}
+\end{figure}
+
+Finally, the complex problem is shown in Figure \ref{fig:mbfvsbf48}. The population size is set to 100 because of the increase in solutions space complexity. The mutation rate is also set at 0.9 without further study because of computational limitations, i.e., we just took the best value from the simple problem. Since the optimal value of 33523 is not reached at any time, we should interpret the results in a different way. Here we focus on solutions quality, meaning a lower best fitness value; and the efficiency. 
+
+Solutions quality is studied under the boxplot showed in Figure \ref{fig:quality48}, where crossover rate of 0.9 show clearly a better performance. On the other hand, MBF and best fitness shows a linear dependency in most of the instances, meaning a similar efficiency. Indeed, once the local optima is found the best fitness get stuck on it, and only find another local optima if the variation operators are relevant enough to skip the local optima.
+
+\newpage
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.75]{../figures/48citiesMBFvsbF.png}
+    \caption{Mean Best Fitness (MBF) versus best fitness value for different parameters' configuration.}
+    \label{fig:mbfvsbf48}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.75]{../figures/48citiesquality.png}
+    \caption{Solutions quality in terms of the best fitness values.}
+    \label{fig:quality48}
+\end{figure}
+
+\subsection*{Synthetic datasets}
+The analysis for synthetic datasets follow the same methodology as the previous examples for real-world data set, nevertheless the optimal solution is now unknown. The analysis are repeated for two problem instances of different complexity where the points (cities) are randomly drawn from a 2-dimensional uniform distribution within a given range. The solutions can be found in the Jupyter notebook.
+
+
+\section{Conclusions}
+The crossover rate in a genetic algorithm plays a pivotal role in balancing exploration and exploitation within the search space. A high crossover rate promotes exploration by encouraging the recombination of genetic information, potentially generating diverse offspring, which can be beneficial for escaping local optima. Conversely, a low crossover rate favors exploitation by maintaining the genetic integrity of parents, allowing for the preservation of well-performing solutions. The optimal crossover rate depends on the specific problem and its characteristics; hence, its relevance lies in its ability to fine-tune the algorithm's ability to strike a balance between exploration and exploitation, ultimately influencing the algorithm's convergence speed and solution quality.
+
+\section*{Supplementary figures}
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/48output.png}
+        \caption{Progress for maximum number of iterations set at 5000.}
+        \label{fig:progress16}
+    \end{subfigure}
+    \hfil
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figures/48path1.png}
+        \caption{Algorithm output (local optima)}
+        \label{fig:output16}
+    \end{subfigure}
+    \caption{Simple problem with 48 cities reaching local optima}
+    \label{fig:problem16}
+\end{figure}
 \printbibliography
 
 \end{document}

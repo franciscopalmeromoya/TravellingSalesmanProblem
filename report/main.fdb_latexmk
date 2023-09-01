@@ -1,14 +1,22 @@
 # Fdb version 4
-["biber main"] 1691879962 "main.bcf" "main.bbl" "main" 1691915990 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1693597460 -1
   "./ref.bib" 1691879695 1166 391aebf4fbe510231162e160ef09505e ""
-  "main.bcf" 1691915989 107826 9c0591444c47fac0e34744cc9bdb0544 "pdflatex"
+  "main.bcf" 1693597460 107826 9c0591444c47fac0e34744cc9bdb0544 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1691915989 "/Users/fpalmeromoya/Documents/UNED/CE/TravellingSalesmanProblem/report/main.tex" "main.pdf" "main" 1691915990 0
-  "/Users/fpalmeromoya/Documents/UNED/CE/TravellingSalesmanProblem/report/main.tex" 1691915988 17201 aa61af87174a33812b5f240aa4eb4ebd ""
-  "/dev/null" 1691915988 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1693597458 "/Users/fpalmeromoya/Documents/UNED/CE/TravellingSalesmanProblem/report/main.tex" "main.pdf" "main" 1693597460 0
+  "../figures/16citiesMBFvsbF.png" 1693590713 160884 f5b43d700641227fa9c5b010bd20c92e ""
+  "../figures/16citiesquality.png" 1693596088 55570 b12613ba03797477f887d0839ad38c2d ""
+  "../figures/48citiesMBFvsbF.png" 1693595814 134343 d8049ae77a50a89bac21ef3e528c1ef8 ""
+  "../figures/48citiesquality.png" 1693595985 54845 d588a8747f956bbdb09d9d3ef5c082df ""
+  "../figures/48output.png" 1691931313 15329 541d2ff5b82f60b1468477c0f3b29ca2 ""
+  "../figures/48path1.png" 1691931201 166921 a08773ada78664368fcacc231b2301ce ""
+  "../figures/output16.png" 1693592437 28831 1c95371f6d793e80b47815cb43546952 ""
+  "../figures/progress16.png" 1693592418 22460 b109555db924218b82ee628f67d16947 ""
+  "/Users/fpalmeromoya/Documents/UNED/CE/TravellingSalesmanProblem/report/main.tex" 1693597456 25685 aa96ac9442f5f20312236b61186e3b60 ""
+  "/dev/null" 1693597460 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -107,6 +115,9 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/blx-dm.def" 1643926307 32455 8d3e554836db11aab80a8e11be62e1b1 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx" 1678141846 4629 cda468e8a0b1cfa0f61872e171037a4b ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx" 1643926307 39965 48ce9ce3350aba9457f1020b1deba5cf ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty" 1678653221 55778 14d5c99aa26410e440820bb9ea5b8b3a ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty" 1678653221 71836 1a735454ad10692452eb2f2fc37f3865 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty" 1678653221 12462 ecf33913ce1e8012075d24e1f47f0d9b ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg" 1429144587 7068 06f8d141725d114847527a66439066b6 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def" 1663185836 21994 2bc2a882df92d97dbce35c06bb1d3541 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty" 1663185836 62761 3c92d495a9e03d7254b9a3266aa17164 ""
@@ -169,11 +180,11 @@
   "_minted-main/B9061EE9C50F6F2C9E976CEA1B1F936D541C68F80C6A6F06151AFD63BAE50EBC.pygtex" 1691881971 97 d3c743c0ab6b109119f692d692fd891e ""
   "_minted-main/CE70760D51B3B25F94486228E803C350541C68F80C6A6F06151AFD63BAE50EBC.pygtex" 1691882649 79 6201fe7144243b5f6023c7a0bad183d0 ""
   "_minted-main/default.pygstyle" 1691881906 6365 683ea4fd81022f120108d52c508c17f9 ""
-  "main.aux" 1691915989 2253 4755ff1a12aa48ea4f9c367e104d44cb "pdflatex"
+  "main.aux" 1693597460 5900 dc4b799536e911dbb491a4523c7c9aa4 "pdflatex"
   "main.bbl" 1691879964 2803 d98434c46ab247e8b1c5ae50a05cf6c2 "biber main"
-  "main.out" 1691915989 565 f6ed9f41afaecb101507b3988d0bc723 "pdflatex"
-  "main.run.xml" 1691915989 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
-  "main.tex" 1691915988 17201 aa61af87174a33812b5f240aa4eb4ebd ""
+  "main.out" 1693597460 663 be7954930d36db56284ea6aaf27e1591 "pdflatex"
+  "main.run.xml" 1693597460 2298 9255f4d2cb39a5ffeeda22d5a40b248a "pdflatex"
+  "main.tex" 1693597456 25685 aa96ac9442f5f20312236b61186e3b60 ""
   (generated)
   "main.aux"
   "main.bcf"
