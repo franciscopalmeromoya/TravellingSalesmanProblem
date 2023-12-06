@@ -1,2 +1,0 @@
-{"rule":"IN_A_X_MANNER","sentence":"^\\QSince the optimal value of 33523 is not reached at any time, we should interpret the results in a different way.\\E$"}
-{"rule":"THE_SUPERLATIVE","sentence":"^\\QHere we focus on solutions quality, meaning a lower best fitness value; and\\E$"}
