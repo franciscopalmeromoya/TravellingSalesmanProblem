@@ -4,6 +4,11 @@ The present repository shows a Genetic Algorithm approach for the Traveling Sale
 investigates the interplay between crossover probability and the effectiveness (including efficiency) of the genetic
 algorithm. It delves into how the crossover probability influences the quality and convergence speed of results,
 demonstrated through instances of varying complexities in the Traveling Salesman Problem.
+<p align="center">
+  <img src="figures/16citiesMBFvsbF.png" alt="Example image">
+</p>
+
+
 ## Implementation
 The code designed for this problem is developed from scratch. It is written in Python and make use of common libraries of the language such as ``numpy, scipy, matplotlib, etc``. The code structure is divided into two main package, 
 one for the GA and other for usuful functions for the specific problem.
