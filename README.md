@@ -19,3 +19,11 @@ possible to reuse the code recoursively. If one want to use a different operator
 new operator, and then insert it into the code.
 Other useful functions specific for the TSP are developed into the ``tools`` package. There,we can find plot functions
 for the path and cities representation into a 2-dimensional plane or functions to load the cities coordinates from a file.
+
+```python
+import GeneticAlgorithm.GeneticAlgorithm as ga
+# Instanciate our model
+genAlg = ga.GeneticAlgorithm(chromosome, popSize, crossoverRate, mutationRate, num_iter, show = True)
+# Run our Genetic Algorithm model
+fittest, bestFitness = genAlg.run(EDM)
+```
